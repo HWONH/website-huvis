@@ -1,0 +1,140 @@
+@charset "utf-8";
+/* 모든 페이지의 공통된 스타일 모음 : common.css */
+@font-face{
+    font-family: NtSansKR;
+    font-weight: 400;
+    font-style: normal;
+    src: url("../../../fonts/NotoSansKR-Regular.eot");
+    src: local("Noto Sans KR"),
+            url("../../../fonts/NotoSansKR-Regular.eot#iefix") format("embedded-opentype"),
+            url("../../../fonts/NotoSansKR-Regular.woff2") format("woff2"),
+            url("../../../fonts/NotoSansKR-Regular.woff") format("woff"),
+            url("../../../fonts/NotoSansKR-Regular.otf") format("opentype");
+}
+@font-face{
+    font-family: NtSansKR;
+    font-weight: 500;
+    font-style: normal;
+    src: url("../../../fonts/NotoSansKR-Medium.eot");
+    src: local("Noto Sans KR"),
+            url("../../../fonts/NotoSansKR-Medium.eot#iefix") format("embedded-opentype"),
+            url("../../../fonts/NotoSansKR-Medium.woff2") format("woff2"),
+            url("../../../fonts/NotoSansKR-Medium.woff") format("woff"),
+            url("../../../fonts/NotoSansKR-Medium.otf") format("opentype");
+}
+@font-face{
+    font-family: NtSansKR;
+    font-weight: 700;
+    font-style: normal;
+    src: url("../../../fonts/NotoSansKR-Bold.eot");
+    src: local("Noto Sans KR"),
+            url("../../../fonts/NotoSansKR-Bold.eot#iefix") format("embedded-opentype"),
+            url("../../../fonts/NotoSansKR-Bold.woff2") format("woff2"),
+            url("../../../fonts/NotoSansKR-Bold.woff") format("woff"),
+            url("../../../fonts/NotoSansKR-Bold.otf") format("opentype");
+}
+
+/* tag reset */
+body, h1, h2, h3, h4, ul, p, button{margin: 0;padding: 0;}
+h1, h2, h3, h4{font-size: 100%;font-weight: 500;line-height: 1.2;}
+ul{list-style: none;}
+a:link, a:visited, a:hover, a:active{color: inherit;text-decoration: none;}
+button{border: none;background: none;cursor: pointer;font-family: inherit;font-size: inherit;color: inherit;}
+img{border: none; vertical-align: top;}
+header, section, article, nav, footer{display: block;}
+
+/* common class */
+.f_l{float: left;}
+.f_r{float: right;}
+.p_r{position: relative;}
+.p_a{position: absolute;}
+.clearfix::after{content: "";display: block;clear: both;}
+.blind{width: 1px;height: 1px;position: absolute;overflow: hidden;border: o;clip: rect(1px, 1px, 1px, 1px);clip-path: inset(50%);}
+.blind2{width: 1px;height: 1px;margin: -1px;overflow: hidden;border: o;clip: rect(1px, 1px, 1px, 1px);clip-path: inset(50%);display: inline-block;}
+.area{width: 1170px;margin: 0 auto;}
+.max_area{max-width: 1920px;margin: 0 auto;}
+.bold{font-weight: 700;}
+.font_w{color: #ffffff !important;} /* footer 내부에서만 쓰이지 않으므로 #footer .font_w라고 작성하지 말고 우선순위를 최대로 높이기 위해 !important */
+
+/* skip navigation */
+#skip a{position: absolute;top: 0;left: -9999px;}
+#skip a:focus{left: 0;width: 100%;height: 50px;line-height: 50px;text-align: center;background: #01b4e5;color: #ffffff;font-weight: 700;z-index: 1000;}
+
+body{font-family: NtSansKR;font-size: 16px;color: #333333;line-height: 1.5;}
+/* header */
+#header{position: fixed;top: 0;left: 0;width: 100%;height: 100px;background: #ffffff;z-index: 900;} /* width: 100%; 대신 left: 0;right: 0; */
+.logo, .util{position: relative;z-index: 910;} /* absolute인 #gnb 아래 깔리지 않게 하려고 -> z-index를 높여야 한다 -> relative를 선택해서 지정(좌표값을 따로 지정하지 않으면 현재 위치에 고정) */
+.logo{padding: 22px 0 0 30px;}
+.util ul{float: left;}
+.util ul li a{display: block;}
+.util .lang{margin: 36px 20px 0 0;width: 59px;height: 26px;line-height: 26px;border: 2px solid #898989;-webkit-border-radius: 18px;-moz-border-radius: 18px;border-radius: 18px;background: #ffffff;font-size: 14px;overflow: hidden;}
+.util .lang li a{position: relative;text-indent: 10px;font-weight: 700;color: #898989;}
+.util .lang li a::after{content: "";position: absolute;top: 11px;right: 10px;border-top: 4px solid #898989;border-left: 3.5px solid transparent;border-right: 3.5px solid transparent;}
+.util .quick li a{width: 145px;height: 50px;line-height: 50px;text-indent: 30px;color: #ffffff;}
+.util .quick li:nth-child(1) a{background: #00265b url("../images/common/icon_site_buy.png") no-repeat 97px 50%;}
+.util .quick li:nth-child(2) a{background: #01b4e5 url("../images/common/icon_site_intra.png") no-repeat 100px 50%;}
+.util .quick li a:hover, .util .quick li a:focus{color: #ffff00;text-decoration: underline;}
+
+/* gnb : pull-down menu */
+#gnb{position: absolute;top: 0;left: 0;right: 0;background: #ffffff url("../images/common/bg_nav.gif") repeat-x;border-bottom: 1px solid #aaa;text-align: center;}
+#gnb > ul{position: relative;top: 0;left: -42px;margin: 0 auto;width: 700px;height: 100px;}
+/* left: -42px; depth1 ul이 문서 가운데 위치(.util에 치우치지 않도록 하기위해 앞쪽으로 42픽셀 당기기) */
+/* #gnb > ul{display: inline-block;width: 700px;margin-left: -42px;vertical-align: top;} */
+/* 로딩시, 실제 높이 100픽셀 / 마우스 오버시, 스크립트의 영향으로 높이는 더 높아진다
+inline-block으로 설정한 경우 하단여백(이미지 하단 여백과 동일한 오류) => vertical-align 으로 제어 */
+#gnb > ul > li{float: left;width: 140px;}
+
+#gnb ul li a{display: block;}
+#gnb > ul > li > a{position: relative;height: 100px;line-height: 100px;font-size: 18px;font-weight: 500;color: #000000;}
+#gnb > ul > li.on > a{color: #01b4e5;}
+#gnb > ul > li > a::after{content: "";position: absolute;bottom: 0;left: 50px;width: 40px;height: 5px;background: #01b4e5;opacity: 0;}
+#gnb > ul > li.on > a::after{opacity: 1;}
+#gnb > ul > li > a, #gnb > ul > li > a::after{-webkit-transition: all 0.5s;-moz-transition: all 0.5s;-o-transition: all 0.5s;transition: all 0.5s;}
+
+#gnb ul li div::before{content: "";display: block;height: 74px;background: no-repeat left bottom;}
+#gnb ul .gnb1 div::before{background-image: url("../images/common/icon_lnb_company_off.gif");}
+#gnb ul .gnb2 div::before{background-image: url("../images/common/icon_lnb_product_off.gif");}
+#gnb ul .gnb3 div::before{background-image: url("../images/common/icon_lnb_invest_off.gif");}
+#gnb ul .gnb4 div::before{background-image: url("../images/common/icon_lnb_pr_off.gif");}
+#gnb ul .gnb5 div::before{background-image: url("../images/common/icon_lnb_recruit_off.gif");}
+
+#gnb ul .gnb1.on div::before{background-image: url("../images/common/icon_lnb_company_on.gif");}
+#gnb ul .gnb2.on div::before{background-image: url("../images/common/icon_lnb_product_on.gif");}
+#gnb ul .gnb3.on div::before{background-image: url("../images/common/icon_lnb_invest_on.gif");}
+#gnb ul .gnb4.on div::before{background-image: url("../images/common/icon_lnb_pr_on.gif");}
+#gnb ul .gnb5.on div::before{background-image: url("../images/common/icon_lnb_recruit_on.gif");}
+
+#gnb ul li div ul{height: 221px;margin-bottom: 18px;}
+#gnb ul li + li div ul{border-left: 1px solid #ccc;}
+
+#gnb ul li div ul li a{height: 34px;line-height: 34px;}
+#gnb ul li div ul li:hover a, #gnb ul li div ul li a:focus, #gnb ul li div ul li.on a{color: #01b4e5;}
+
+/* section */
+#content{padding-top: 100px;} /* header가 100픽셀 높이로 fixed되어 가려보임 */
+
+/* footer */
+#footer{height: 100px;background: #252525;font-size: 14px;color: #989898;line-height: 100px;}
+#footer .max_area > p{float: left;font-size: 12px;padding-left: 30px;}
+.foot_r > ul, .foot_r .family, .foot_r > ul li{float: left;}
+.foot_r .quick{position: relative;color: #ffffff;}
+.foot_r .quick::after{content: "";position: absolute;right: 0;top: 50%;margin-top: -7px;width: 1px;height: 14px;background: #ffffff;}
+/* default */
+.foot_r .quick li{margin-right: 13px;}
+.foot_r .quick li a{display: block;background: no-repeat left center;}
+.foot_r .quick li:nth-child(1) a{background-image: url("../images/common/icon_footer_buy_off.png");padding-left: 31px;}
+.foot_r .quick li:nth-child(2) a{background-image: url("../images/common/icon_footer_intra_off.png");padding-left: 25px;}
+/* :hover, :focus */
+.foot_r .quick li a:hover, .foot_r .quick li a:focus{color: #01b4e5;}
+.foot_r .quick li:nth-child(1) a:hover, .foot_r .quick li:nth-child(1) a:focus{background-image: url("../images/common/icon_footer_buy_on.png");}
+.foot_r .quick li:nth-child(2) a:hover, .foot_r .quick li:nth-child(2) a:focus{background-image: url("../images/common/icon_footer_intra_on.png");}
+.foot_link li{margin-left: 12px;}
+
+.family{margin: 33px 30px 0 27px;line-height: 33px;}
+.family > *{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;background: #ffffff;border: 1px solid #989898;}
+.family > a{float: left;height: 35px;}
+.family .fsite, .family ul{width: 130px;padding-left: 20px;}
+.family .fsite{background: #ffffff url("../images/common/arr_family_off.gif") no-repeat 99px 50%;margin-right: 5px;}
+.family.on .fsite{background-image: url("../images/common/arr_family_on.gif")}
+.family ul{display: none;position: absolute;bottom: 34px;left: 0;border-bottom: none;}
+.family .go{width: 50px;text-align: center;}

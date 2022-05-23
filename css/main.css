@@ -1,0 +1,179 @@
+@charset "utf-8";
+/* 인덱스 문서에서 필요한 스타일 : main.css */
+/* #indicator */
+#indicator{position: fixed;top: 50%;right: 73px;margin-top: -74px;width: 138px;z-index: 900;font-size: 12px;}
+#indicator ul li{padding: 8px 0;}
+#indicator ul li a{display: block;height: 24px;line-height: 24px;}
+#indicator ul li a span, #indicator ul li a::after{float: left;height: 24px;}
+#indicator ul li a span{width: 104px;-webkit-border-radius: 12px;-moz-border-radius: 12px;border-radius: 12px;background: #00265b;color: #ffffff;text-align: center;margin-right: 10px;opacity: 0;}
+#indicator ul li.on a span, #indicator ul li a:hover span{opacity: 1;}
+#indicator ul li a::after{content: "";width: 24px;background: url("../images/main/nav_off.png") no-repeat;}
+#indicator ul .list1.on a::after, #indicator ul .list1 a:hover::after{background: url("../images/main/nav1_on.png");}
+#indicator ul .list2.on a::after, #indicator ul .list2 a:hover::after{background: url("../images/main/nav2_on.png");}
+#indicator ul .list3.on a::after, #indicator ul .list3 a:hover::after{background: url("../images/main/nav3_on.png");}
+#indicator ul .list4.on a::after, #indicator ul .list4 a:hover::after{background: url("../images/main/nav4_on.png");}
+#indicator ul .list5.on a::after, #indicator ul .list5 a:hover::after{background: url("../images/main/nav5_on.png");}
+
+/* #cnt1 - MAIN */
+#cnt1{position: relative;}
+
+/* slider */
+#mainSlider, #visual li{width: 100%;height: 790px;}
+#mainSlider{position: relative;}
+#visual li{text-align: center;line-height: 52px;color: #ffffff;background: no-repeat center top;}
+#visual .list1{background-image: url("../images/main/bg_visual1.png");}
+#visual .list2{background-image: url("../images/main/bg_visual2.png");}
+#visual .list3{background-image: url("../images/main/bg_visual3.png");}
+#visual .list4{background-image: url("../images/main/bg_visual4.png");}
+#visual li strong{display: block;padding-top: 192px;font-size: 34px;font-weight: 400;}
+#visual li p{font-size: 50px;font-weight: 700;}
+
+/* 버튼 그룹 bx-controls */
+.bx-controls-direction a, .bx-controls-auto, .bx-pager{position: absolute;z-index: 100;}
+.bx-controls a{text-indent: -9999px;}
+
+/* 1) 이전, 다음 버튼 bx-controls-direction */
+.bx-controls-direction a{top: 312px;width: 54px;height: 53px;}
+.bx-prev{left: 20px;background: url("../images/main/btn_prev.png");}
+.bx-next{right: 20px;background: url("../images/main/btn_next.png");}
+
+.bx-controls-auto, .bx-pager{top: 550px;left: 50%;}
+/* 2) start, stop 버튼 bx-controls-auto */
+.bx-controls-auto{margin-left: 36.5px;}
+.bx-controls-auto a{display: block;width: 27px;height: 27px;background: url("../images/main/btn_pause_play.png") no-repeat;}
+.bx-controls-auto .bx-start{background-position: right top;}
+.bx-controls-auto .bx-stop{background-position: left top;}
+.bx-controls-auto a.active{display: none;}
+
+/* 3) 페이징 인디케이터 bx-pager */
+.bx-pager{margin-left: -63.5px;padding-top: 6px;width: 100px;}
+.bx-pager a{float: left;width: 15px;height: 15px;margin-right: 10px;border: 2px solid #fff;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;}
+.bx-pager a.active{background: #ffffff;}
+
+/* info */
+.info{top: 45%;left: 50%;transform: translateX(-50%);z-index: 100;}
+.info li{float: left;}
+.info li + li{margin-left: 30px;}
+.info li a{display: block;width: 70px;height: 24px;padding-top: 76px;background: no-repeat;color: #ffffff;text-align: center;}
+.info li:nth-child(1) a{background-image: url("../images/main/btn_visual_company.png");}
+.info li:nth-child(2) a{background-image: url("../images/main/btn_visual_product.png");}
+.info li:nth-child(3) a{background-image: url("../images/main/btn_visual_recruit.png");}
+.info li a:hover, .info li a:focus{color: #01b4e5;}
+
+/* #cnt2 ~ #cnt5 공통스타일 */
+#content article + article{padding-bottom: 200px;}
+#content article .tit, #content article .tit + p{text-align: center;}
+#content article .tit{font-size: 36px;color: #000000;}
+#content article .tit + p{font-size: 18px;padding: 6px 0 50px;}
+
+/* #cnt2 - ABOUT US */
+#cnt2{padding: 0 40px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+.about li{float: left;width: 255px;height: 200px;background: no-repeat right top;}
+.about li + li{margin-left: 22px;}
+.about li:nth-child(1){background-image: url("../images/main/bg_aboutus1.png");}
+.about li:nth-child(2){background-image: url("../images/main/bg_aboutus2.png");}
+.about li:nth-child(3){background-image: url("../images/main/bg_aboutus3.png");}
+.about li:nth-child(4){background-image: url("../images/main/bg_aboutus4.png");}
+.about li h4{font-size: 20px;line-height: 1;padding: 35px 0 12px;}
+.about li p{height: 85px;line-height: 21px;padding: 0 60px 26px 0;word-break: keep-all;background: pink;}
+/* 글이 길어질 경우 마지막에서 줄바꿈을 어떻게 표현할지
+word-break: keep-all(어절단위) / break-all(음절단위);
+*/
+.bg_arrow{display: inline-block;padding-right: 30px;height: 20px;line-height: 20px;background: url("../images/common/btn_detail.png") no-repeat right bottom;}
+
+.about{margin-bottom: 100px;}
+.about .bg_arrow{color: #666666;}
+.about .bg_arrow:hover, .about .bg_arrow:focus{background-position: right top;color: #000000;}
+
+.news{width: 534px;height: 140px;}
+.news h4{font-size: 20px;line-height: 1;margin-bottom: 24px;}
+.news ul li{height: 20px;line-height: 20px;padding: 5px 0;}
+.news ul li *{float: left;height: 20px;}
+.news_btn{width: 78px;font-size: 12px;text-align: center;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;color: #ffffff;margin-right: 10px;}
+.dblue{background: #00265b;}
+.gray{background: #a2a5a6;}
+.wblue{background: #01b4e5;}
+.news ul li a strong{width: 320px;font-weight: 400;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+/* css 말줄임표 만들기 
+1) 블록타입(inline-block 포함) 2) 가로크기 고정 3) 줄바꿈 억제 white-space: nowrap; 4) 넘쳐나는 내용 숨기기 5) text-overflow: ellipsis; */
+.news ul li a p{width: 116px;margin-left: 10px;text-align: right;}
+
+/* #cnt3 - PRODUCTS */
+.products > li{position: relative;float: left;width: 380px;height: 300px;margin: 0 15px 15px 0;padding: 40px 140px 0 40px;border: 1px solid #ccc;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;background: no-repeat 250px 30px;}
+.products > li:nth-child(3n){margin-right: 0;}
+.products .list1{background-image: url("../images/main/bg_product1.png");}
+.products .list2{background-image: url("../images/main/bg_product2.png");}
+.products .list3{background-image: url("../images/main/bg_product3.png");}
+.products .list4{background-image: url("../images/main/bg_product4.png");}
+.products .list5{background-image: url("../images/main/bg_product5.png");}
+.products .list6{background-image: url("../images/main/bg_product6.png");}
+
+.products li h4{font-size: 20px;padding-bottom: 20px;}
+.products li p{line-height: 20px;word-break: keep-all;}
+.products li button{position: absolute;left: 0;bottom: 0;width: 100%;height: 80px;background: #ccc url("../images/main/btn_more.png") no-repeat right center;}
+.products li ul{display: none;}
+
+/* li:hover, li button:focus로 클릭한 경우 => 모두 스크립트에서 li.on
+1) li => 배경색, 배경이미지
+2) h4 => 흰글자
+3) p => 아무것도 하지 않음 => display: none; 이던 ul이 absolute(배경색)로 가림
+4) button => 불투명도 0 (display: none 하면 안되는 이유 : 포커스를 가진 태그가 display: none 되면 포커스는 문서의 가장 처음으로 튕겨나간다.)
+5) ul => display: block으로 나타남 */
+.products > li.on{background-color: #01b4e5;color: #ffffff;}
+.products .list1.on{background-image: url("../images/main/bg_product1_hover.png");}
+.products .list2.on{background-image: url("../images/main/bg_product2_hover.png");}
+.products .list3.on{background-image: url("../images/main/bg_product3_hover.png");}
+.products .list4.on{background-image: url("../images/main/bg_product4_hover.png");}
+.products .list5.on{background-image: url("../images/main/bg_product5_hover.png");}
+.products .list6.on{background-image: url("../images/main/bg_product6_hover.png");}
+.products li.on button{opacity: 0;cursor: default;} /* https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor */
+.products li.on ul{display: block;position: absolute;top: 80px;left: 40px;width: 160px;padding-right: 40px;background: #01b4e5;}
+.products li ul li a{display: block;height: 29px;line-height: 29px;border-bottom: 1px solid #fff;background: url("../images/main/arr_more.png") no-repeat right center;}
+.products li ul li a:hover, .products li ul li a:focus{color: #00265b;}
+
+/* list6 */
+.products .list6 a{display: none;position: absolute;top: 0;left: 0;right: 0;bottom: 0;}
+.products .list6.on a{display: block;}
+
+/* #cnt4 - PR CENTER */
+#cnt4 > ul{height: 452px;}
+#cnt4 > ul > li{float: left;width: 378px;height: 452px;border: 1px solid #ccc;}
+#cnt4 > ul > li + li{margin-left: 15px;}
+#cnt4 > ul > li p{height: 72px;font-size: 20px;line-height: 72px;text-align: center;}
+#cnt4 > ul > li a img{width: 378px;height: 380px;} /*  */
+
+#cnt4 .clearfix{margin-top: 20px;}
+#cnt4 .clearfix h4, #cnt4 .clearfix p, #cnt4 .clearfix ul li{float: left;}
+#cnt4 .clearfix p{padding-top: 14px;padding-left: 5px;}
+#cnt4 .clearfix ul{float: right;}
+
+#cnt4 .clearfix ul li{position: relative;width: 38px;height: 38px;margin-left: 8px;}
+#cnt4 .clearfix ul li .tooltip{position: absolute;top: -50px;left: 50%;transform: translateX(-50%);border: 1px solid #808080;border-radius: 5px;font-size: 13px;padding: 9px;background: #ffffff;white-space: nowrap;display: none;}
+#cnt4 .clearfix ul li .tooltip::before, #cnt4 .clearfix ul li .tooltip::after{content: "";position: absolute;top: 100%;left: 50%;margin-left: -5px;border-top: 6px solid #808080;border-left: 5px solid transparent;border-right: 5px solid transparent;}
+#cnt4 .clearfix ul li .tooltip::after{top: 96%;border-top-color: #fff;}
+#cnt4 .clearfix ul li:hover .tooltip, #cnt4 .clearfix ul li a:focus + .tooltip{display: block;}
+
+/* #cnt5 - 생활 속 휴비스 */
+/* mainTab */
+#mainTab{width: 1170px;height: 680px;margin: 50px auto;}
+#mainTab .tablist{height: 50px;margin-bottom: 30px;}
+#mainTab .tablist li{float: left;width: 380px;height: 50px;line-height: 48px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border: 1px solid #ccc;background: #f2f2f2;font-size: 18px;color: #000000;text-align: center;cursor: pointer;}
+#mainTab .tablist li + li{margin-left: 15px;}
+#mainTab .tablist li:hover, #mainTab .tablist li:focus, #mainTab .tablist li.active{background: #00326c;border-color: #00326c;color: #ffffff;}
+
+#mainTab .tabpanel{position: relative;height: 600px;display: none;color: #ffffff;}
+#mainTab .tabpanel.active{display: block;}
+
+#mainTab .tabpanel .bg{position: relative;height: 530px;text-align: center;}
+#mainTab #tabpanel1 .bg{background: url("../images/main/img_life1.jpg");}
+#mainTab #tabpanel2 .bg{background: url("../images/main/img_life2.jpg");}
+#mainTab #tabpanel3 .bg{background: url("../images/main/img_life3.jpg");}
+
+#mainTab .tabpanel .bg h4{padding-top: 163px;font-size: 74px;line-height: 111px;}
+#mainTab .tabpanel .bg p{position: relative;padding-top: 30px;line-height: 22px;}
+#mainTab .tabpanel .bg p:before{content: "";position: absolute;top: 0;left: 50%;margin-left: -30px;width: 60px;height: 3px;background: #ffffff;}
+#mainTab .tabpanel .bg img{position: absolute;right: 50px;bottom: 50px;}
+#mainTab .tabpanel .bg button{position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
+#mainTab .tabpanel .bg button:focus:after{content: "";position: absolute;top: 1px;left: 1px;width: calc(100% - 2px);height: calc(100% - 2px);outline: 2px dashed #ffff00;}
+
+#mainTab .tabpanel a{position: absolute;right: 0;bottom: 0;width: 180px;height: 40px;line-height: 38px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border: 1px solid #666;background: #999999 url("../images/main/arr_more.png") no-repeat 119px 50%;padding-left: 43px;margin-top: 30px;font-size: 14px;}
