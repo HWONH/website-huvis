@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title> bx-slider </title>
+    <link rel="stylesheet" href="css/slider.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#visual').bxSlider({
+                //필요한 옵션 추가하기
+                mode: 'fade', //'horizontal'(기본값), 'vertical', 'fade'
+                autoControls: true, //시작, 정지 버튼 생성; false(기본값), true
+                auto: true, //자동실행; false(기본값), true
+                pause: 2000, //1초=1000, 4초마다=4000(기본값)
+                ariaLive: true, //접근성추가; 새롭게 갱신되는 컨텐츠 알리기; true(기본값;생략가능)
+                ariaHidden: true, //접근성추가; 눈에는 보이지만 스크린리더에서는 읽어주지 않기; true(기본값;생략가능)
+                prevText: '이전 슬라이더 보기', //'Prev'(기본값)
+                nextText: '다음 슬라이더 보기', //'Next'(기본값)
+                startText: '애니메이션 시작', //'Start'(기본값)
+                stopText: '애니메이션 일시정지' //'Stop'(기본값)
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- bx-slider 사용순서
+        1) 마크업 : 슬라이더 비쥬얼 내용
+        2) 나머지는 스크립트에서 동적생성함(별도의 마크업을 하지 않음) - 이전,다음 / play,stop / 페이징인디케이터
+
+        3) jquery.bxslider.min.js을 연결(https://github.com/stevenwanderski/bxslider-4사이트에서 clone or downlodded버튼을 클릭해서 zip파일로 다운함)
+        4) 대상 선택자를 호출해서 bxSlider()라는 메서드를 사용
+        5) 필요한 옵션은 추가 적용(여러개의 옵션일 경우 쉼표로 구분 - https://bxslider.com/options/)
+        
+        6) 스타일 작성하기
+     -->
+     <div id="mainSlider">
+        <ul id="visual">
+            <li class="list1">
+                <!-- 배경이미지 처리 -->
+                <strong>소재의 무한한 가능성</strong>
+                <p>The Infinite potential of Materials</p>
+            </li>
+            <li class="list2">
+                <strong>더 나은 세상을 위한 기술</strong>
+                <p>Technology for better life</p>
+            </li>
+            <li class="list3">
+                <strong>더 나은 성과를 위한 기술</strong>
+                <p>Technology for better performance</p>
+            </li>
+            <li class="list4">
+                <strong>더 나은 안전을 위한 기술</strong>
+                <p>Technology for better safety</p>
+            </li>
+        </ul>
+        <!-- control이 자동으로 동적생성 => 이전,다음 / start,stop / 페이징인디케이터 -->
+    </div>
+</body>
+
+</html>
