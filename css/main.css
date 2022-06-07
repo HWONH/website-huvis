@@ -75,7 +75,7 @@
 .about li:nth-child(3){background-image: url("../images/main/bg_aboutus3.png");}
 .about li:nth-child(4){background-image: url("../images/main/bg_aboutus4.png");}
 .about li h4{font-size: 20px;line-height: 1;padding: 35px 0 12px;}
-.about li p{height: 85px;line-height: 21px;padding: 0 60px 26px 0;word-break: keep-all;background: pink;}
+.about li p{height: 85px;line-height: 21px;padding: 0 60px 26px 0;word-break: keep-all;}
 /* 글이 길어질 경우 마지막에서 줄바꿈을 어떻게 표현할지
 word-break: keep-all(어절단위) / break-all(음절단위);
 */
